@@ -6,82 +6,209 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <title>Frontend Mentor | Social media dashboard with theme switcher</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
-  Social Media Dashboard
-  Total Followers: 23,004
+  <header class="website_header">
+    <div class="header_left">
+      <p class="website_title">Social Media Dashboard</p>
+      <p class="total_counter">Total Followers: 23,004</p>
+    </div>
+    <div class="header_right">
+      <input type="button">
+      <span id="toggle_text"> Dark Mode </span>
+    </div>
+  </header>
 
-  Dark Mode
+  <div class="followers_wrapper">
 
-  
+    <div class="followers_card_wrapper" id="fb">
+      <div class="followers_card">
+        <p class="platform_id">
+          <img src="images/icon-facebook.svg" class="platform_icon">
+          <span class="platform_username"> @nathanf </span>
+        </p>
+        <p class="followers_count">1987</p>
+        <p class="followers_text">Followers</p>
+        <p class="followers_change" id="followers_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>12 Today</span>
+        </p>
+      </div>
+    </div>
 
-  @nathanf
-  1987
-  Followers
-  12 Today
+    <div class="followers_card_wrapper" id="twitter">
+      <div class="followers_card">
+        <p class="platform_id">
+          <img src="images/icon-twitter.svg" class="platform_icon">
+          <span class="platform_username"> @nathanf </span>
+        </p>
+        <p class="followers_count">1044</p>
+        <p class="followers_text">Followers</p>
+        <p class="followers_change" id="followers_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>99 Today</span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="followers_card_wrapper" id="ig">
+      <div class="followers_card">
+        <p class="platform_id">
+          <img src="images/icon-instagram.svg" class="platform_icon">
+          <span class="platform_username"> @realnathanf </span>
+        </p>
+        <p class="followers_count">11k</p>
+        <p class="followers_text">Followers</p>
+        <p class="followers_change" id="followers_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>1099 Today</span>
+        </p>
+      </div>
+    </div>
 
-  @nathanf
-  1044
-  Followers
-  99 Today
+    <div class="followers_card_wrapper" id="yt">
+      <div class="followers_card">
+        <p class="platform_id">
+          <img src="images/icon-youtube.svg" class="platform_icon">
+          <span class="platform_username"> Nathan F </span>
+        </p>
+        <p class="followers_count">8239</p>
+        <p class="followers_text">Followers</p>
+        <p class="followers_change" id="followers_decrease">
+          <img src="images/icon-down.svg" class="change_icon"> 
+          <span>144 Today</span>
+        </p>
+      </div>
+    </div>
 
-  @realnathanf
-  11k
-  Followers
-  1099 Today
+  </div>
 
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
+  <div id="overview_title">Overview - Today</div>
 
+  <div class="overview_wrapper">
 
+    <div class="overview_card" id="fb">
+      <div class="overview_category">
+        <span>Page Views</span>
+        <img src="images/icon-facebook.svg">
+      </div>
+      <div class="overview_result">
+        <span>87</span>
+        <div class="overview_change" id="overview_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>3%</span>
+        </div> 
+      </div>
+    </div>
 
-  Overview - Today
+    <div class="overview_card" id="fb">
+      <div class="overview_category">
+        <span>Likes</span>
+        <img src="images/icon-facebook.svg">
+      </div>
+      <div class="overview_result">
+        <span>52</span>
+        <div class="overview_change" id="overview_decrease">
+          <img src="images/icon-down.svg" class="change_icon"> 
+          <span>2%</span>
+        </div> 
+      </div>
+    </div>
 
-  Page Views
-  87
-  3%
+    <div class="overview_card" id="ig">
+      <div class="overview_category">
+        <span>Likes</span>
+        <img src="images/icon-instagram.svg">
+      </div>
+      <div class="overview_result">
+        <span>5462</span>
+        <div class="overview_change" id="overview_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>2257%</span>
+        </div> 
+      </div>
+    </div>
 
-  Likes
-  52
-  2%
+    <div class="overview_card" id="ig">
+      <div class="overview_category">
+        <span>Profile Views</span>
+        <img src="images/icon-instagram.svg">
+      </div>
+      <div class="overview_result">
+        <span>52k</span>
+        <div class="overview_change" id="overview_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>1375%</span>
+        </div> 
+      </div>
+    </div>
 
-  Likes
-  5462
-  2257%
+    <div class="overview_card" id="twitter">
+      <div class="overview_category">
+        <span>Retweets</span>
+        <img src="images/icon-twitter.svg">
+      </div>
+      <div class="overview_result">
+        <span>117</span>
+        <div class="overview_change" id="overview_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>303%</span>
+        </div> 
+      </div>
+    </div>
 
-  Profile Views
-  52k
-  1375%
+    <div class="overview_card" id="twitter">
+      <div class="overview_category">
+        <span>Likes</span>
+        <img src="images/icon-twitter.svg">
+      </div>
+      <div class="overview_result">
+        <span>507</span>
+        <div class="overview_change" id="overview_increase">
+          <img src="images/icon-up.svg" class="change_icon"> 
+          <span>553%</span>
+        </div> 
+      </div>
+    </div>
+    
+    <div class="overview_card" id="yt">
+      <div class="overview_category">
+        <span>Likes</span>
+        <img src="images/icon-youtube.svg">
+      </div>
+      <div class="overview_result">
+        <span>107</span>
+        <div class="overview_change" id="overview_decrease">
+          <img src="images/icon-down.svg" class="change_icon"> 
+          <span>19%</span>
+        </div> 
+      </div>
+    </div>
+    
+    <div class="overview_card" id="yt">
+      <div class="overview_category">
+        <span>Total Views</span>
+        <img src="images/icon-youtube.svg">
+      </div>
+      <div class="overview_result">
+        <span>1407</span> 
+        <div class="overview_change" id="overview_decrease">
+          <img src="images/icon-down.svg" class="change_icon"> 
+          <span>12%</span>
+        </div> 
+      </div>
+    </div>
 
-  Retweets
-  117
-  303%
+  </div>
 
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Kamil Rybacki</a>.
   </div>
+
 </body>
 </html>
