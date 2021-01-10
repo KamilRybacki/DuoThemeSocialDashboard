@@ -181,7 +181,7 @@ body {
 .header_right {
 
    display: flex;
-   justify-content: center;
+   justify-content: flex-end;
    align-items: center; 
    
    grid-area: 'toggle';
@@ -219,7 +219,7 @@ body {
     cursor: pointer;
 }
 
- .toggle_button #button_circle {
+.toggle_button #button_circle {
 
     background-color: var(--toggle-circle-bg);
 
@@ -293,10 +293,10 @@ body {
 
 }
 
-#fb.followers_card_accent { background-color: var(--fb-header); }
-#twitter.followers_card_accent { background-color: var(--twitter-header); }
-#ig.followers_card_accent { background-image: var(--ig-header); } 
-#yt.followers_card_accent { background-color: var(--yt-header); }
+.f_fb { background-color: var(--fb-header); }
+.f_twitter { background-color: var(--twitter-header); }
+.f_ig { background-image: var(--ig-header); } 
+.f_yt { background-color: var(--yt-header); }
 
 .platform_id {
 
@@ -360,8 +360,8 @@ body {
 
 }
 
-#followers_increase {color: var(--increase-text);}
-#followers_decrease {color: var(--decrease-text);}
+.followers_increase {color: var(--increase-text);}
+.followers_decrease {color: var(--decrease-text);}
 
 .change_icon {
 
@@ -468,8 +468,8 @@ body {
     
 }
 
-#overview_increase {color: var(--increase-text);}
-#overview_decrease {color: var(--decrease-text);}
+.overview_increase {color: var(--increase-text);}
+.overview_decrease {color: var(--decrease-text);}
 
 @media( max-width: 375px ) {
     
