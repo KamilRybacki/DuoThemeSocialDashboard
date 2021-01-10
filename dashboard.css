@@ -4,32 +4,90 @@
 .attribution a { color: hsl(228, 45%, 44%); }
 
 :root {
+    
+     /* SITE BACKGROUND */
+    
+    --site-bg: var(--dark-site-bg);
 
-    --increase-text: hsl(163, 72%, 41%);
-    --decrease-text: hsl(356, 69%, 56%);
+    --dark-site-bg: hsl(230, 17%, 14%);
+    --light-site-bg: hsl(0, 0%, 100%);
+    
+     /* SITE TOP BACKGROUND DECORATION */
+
+    --site-bg-top: var(--dark-site-bg-top);
+
+    --dark-site-bg-top: hsl(232, 19%, 15%);
+    --light-site-bg-top: hsl(225, 100%, 98%);
+
+    /* SITE TOP HEADER TEXT (eg. title) */
+    
+    --top-text: var(--dark-top-text);
+    
+    --dark-top-text: hsl(0, 0%, 100%);
+    --light-top-text: hsl(230, 17%, 14%);
+
+    /* SITE TOP HEADER HR IN MOBILE MODE */
+    
+    --header-hr: var(--dark-header-hr);
+    
+    --dark-header-hr: var(--dark-hover-card-bg);
+    --light-header-hr: var(--dark-card-bg);
+
+    /* SITE NORMAL TEXT (eg. usernames) */
+    
+    --text: var(--dark-text);
+
+    --dark-text: hsl(228, 34%, 66%);
+    --light-text: hsl(228, 12%, 44%);
+
+    /* DASHBOARD CARD BACKGROUND */
+
+    --card-bg: var(--dark-card-bg);
+
+    --dark-card-bg: hsl(228, 28%, 20%);
+    --light-card-bg: hsl(227, 47%, 96%);
+    
+    /* DASHBOARD CARD BACKGROUND IN HOVER STATE */
+    
+    --hover-card-bg: var(--dark-hover-card-bg);
+
+    --dark-hover-card-bg: #333A56;
+    --light-hover-card-bg: #E1E3F0;
+
+    /* DASHBOARD CARDS TOP ACCENTS SPECIFIC TO PLATFORM */
+
     --fb-header: hsl(208, 92%, 53%);
     --twitter-header: hsl(203, 89%, 53%);
     --ig-header: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%) );
     --yt-header: hsl(348, 97%, 39%);
     
-    --dark-toggle: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%) );
-    --light-toggle: hsl(230, 22%, 74%);
+    /* THEME TOGGLE BUTTON BACKGROUND */
     
-    --dark-bg: hsl(230, 17%, 14%);
-    --dark-bg-top: hsl(232, 19%, 15%);
-    --dark-bg-card: hsl(228, 28%, 20%);
-    --dark-text: hsl(228, 34%, 66%);
-    --dark-top-text: hsl(0, 0%, 100%);
+    --toggle-bg: var(--dark-toggle-bg);
 
-    --light-bg: hsl(0, 0%, 100%);
-    --light-bg-top: hsl(225, 100%, 98%);
-    --light-bg-card: hsl(227, 47%, 96%);
-    --light-text:  hsl(228, 12%, 44%);
-    --light-top-text: hsl(230, 17%, 14%);
+    --dark-toggle-bg: linear-gradient( 90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%) );
+    --light-toggle-bg: #AEB2CB;
+    
+    /* THEME TOGGLE BUTTON BACKGROUND IN HOvER STATE*/
+    
+    --toggle-hover-bg: var(--dark-toggle-bg);
+
+    --dark-toggle-hover-bg: linear-gradient( 90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%) );
+    --light-toggle-hover-bg: linear-gradient( 90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%) );
+    
+    /* THEME TOGGLE BUTTON CIRCLE ELEMENT COLOR */
+    
+    --toggle-circle-bg: var(--dark-toggle-circle-bg);
+
+    --dark-toggle-circle-bg: var(--site-bg);
+    --light-toggle-circle-bg: var(--site-bg);
+
+    /* DASHBOARD CARD RATING INCREASE AND DECREASE TEXT */
+
+    --increase-text: hsl(163, 72%, 41%);
+    --decrease-text: hsl(356, 69%, 56%);
     
     --overview-heading-text-size: 14px;
-    
-    --mobile-switchpoint: 375px;
 
 }
 
@@ -39,34 +97,73 @@
 
 body {
 
-    background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background-color: var(--site-bg);
     
     font-family: "Inter";
-    
-    padding-left: 50px;
-    padding-right: 50px;
 
 }
 
+.bg_accent {
+
+    z-index: -1;
+    background-color: var(--site-bg-top);
+    
+    width: 100%;
+    height: 30%;
+    
+    position: absolute;
+
+}
+
+.layout_wrapper {
+
+    width: 80%;
+
+    display: grid;
+    grid-template-areas: 'header'
+                         'followers'
+                         'subheader'
+                         'overview';
+
+    grid-template-columns: 1fr;
+
+}
 
 .website_header {
 
+    grid-area: 'header';
+
     display: grid;
+    grid-template-areas: 'title toggle';
+    
     grid-template-columns: 80% 20%;
-    grid-template-rows: 1fr;
+    
+    width: 100%;
+
+    margin-bottom: 30px;
 
 }
 
 .header_left {
     
     text-align: left;
+    
+    grid-area: 'title';
 
 }
 
 
 .website_title {
 
-    color: var(--dark-top-text);
+    margin-bottom: 5px;
+
+    color: var(--top-text);
     font-size: 28px;
     font-weight: 700;
 
@@ -74,7 +171,9 @@ body {
 
 .total_counter {
     
-    color: var(--light-text);
+    margin-top: 5px;
+    
+    color: var(--text);
     font-weight: 700;
 
 }
@@ -84,18 +183,79 @@ body {
    display: flex;
    justify-content: center;
    align-items: center; 
+   
+   grid-area: 'toggle';
+
+}
+
+.toggle_button {
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: var(--toggle-bg);
+    background-image: var(--toggle-bg);
+    border: none;
+    
+    width: 50px;
+    height: 24px;
+    
+    border-radius: 12px;
+    
+}
+
+.toggle_button:hover {
+
+    background-image: var(--toggle-hover-bg);
+    cursor: pointer;
+}
+
+.toggle_button:focus, toggle_button:active {
+
+    box-shadow: none;
+    outline: 0;
+    background-image: var(--toggle-hover-bg);
+    cursor: pointer;
+}
+
+ .toggle_button #button_circle {
+
+    background-color: var(--toggle-circle-bg);
+
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    
+    margin-left: 3px;
+    margin-right: 3px;
+    
+}
+
+.header_right span {
+
+    font-size: var(--overview-heading-text-size);
+    color: var(--text);
+    font-weight: bolder;
+    
+    margin-right: 15px;
 
 }
 
 .followers_wrapper {
 
+    grid-area: 'followers';
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 30px;
     
+    width: 100%;
+
     margin-bottom: 40px;
+    
 
 }
 
@@ -104,31 +264,39 @@ body {
     height: 100%;
 
     text-align: center;
-    background-color:var(--dark-bg-card);
     
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background-color: var(--card-bg);
     
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-radius: 4px;
 
 }
 
-.followers_card_wrapper {
+.followers_card:hover {
 
-    padding-top: 4px;
+    background-color:var(--hover-card-bg);
+    cursor: pointer;
 
+}
+
+.followers_card_accent {
+
+    position: relative;
+    top: 0%;
+
+    width: 100%;
+    height: 4px;
+    
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    margin-bottom: 20px;
+
 }
 
-#fb.followers_card_wrapper { background-color: var(--fb-header); }
-#twitter.followers_card_wrapper { background-color: var(--twitter-header); }
-#ig.followers_card_wrapper { background: var(--ig-header); }
-#yt.followers_card_wrapper { background-color: var(--yt-header); }
+#fb.followers_card_accent { background-color: var(--fb-header); }
+#twitter.followers_card_accent { background-color: var(--twitter-header); }
+#ig.followers_card_accent { background-image: var(--ig-header); } 
+#yt.followers_card_accent { background-color: var(--yt-header); }
 
 .platform_id {
 
@@ -150,14 +318,14 @@ body {
 
 .platform_username {
 
-    color: var(--dark-text);
+    color: var(--text);
     font-weight: bolder;
 
 }
 
 .followers_count {
 
-    color: var(--dark-top-text);
+    color: var(--top-text);
     font-weight: bolder;
     font-size: 50px;
     
@@ -168,7 +336,7 @@ body {
 
 .followers_text {
     
-    color: var(--dark-text);
+    color: var(--text);
     font-size: 12px;
     
     text-transform: uppercase;
@@ -188,6 +356,7 @@ body {
     font-weight: bolder;
     
     margin-top: 30px;
+    margin-bottom: 20px;
 
 }
 
@@ -202,9 +371,13 @@ body {
 
 #overview_title {
 
-    color: var(--dark-top-text);
+    grid-area: 'subheader';
+
+    color: var(--top-text);
     font-size: 24px;
     font-weight: bolder;
+   
+    width: 100%;
 
     margin-bottom: 20px;
 
@@ -212,9 +385,11 @@ body {
 
 .overview_wrapper {
 
+    grid-area: 'overview';
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     
     grid-column-gap: 30px;
     grid-row-gap: 20px;
@@ -223,10 +398,36 @@ body {
 
 .overview_card {
 
-    background-color: var(--dark-bg-card);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 10px;
+
+    background-color: var(--card-bg);
     
     border-radius: 5px;
     padding: 25px
+    
+}
+
+.overview_card:hover {
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 10px;
+
+    background-color: var(--hover-card-bg);
+    
+    border-radius: 5px;
+    padding: 25px;
+    
+    cursor: pointer;
+
+}
+
+.overview_category img {
+    
+    width: 20px;
+    height: 20px;
     
 }
 
@@ -235,7 +436,7 @@ body {
     display: flex;
     justify-content: space-between;
 
-    color: var(--dark-text);
+    color: var(--text);
     font-weight: bolder;
     font-size: var(--overview-heading-text-size);
 
@@ -243,15 +444,17 @@ body {
 
 .overview_result > span {
 
-    color: var(--dark-top-text);
+    color: var(--top-text);
     font-size: 32px;    
     font-weight: bolder;
 
 }
 
 .overview_result {
+
    display: flex;
    justify-content: space-between; 
+
 }
 
 .overview_change {
@@ -268,10 +471,67 @@ body {
 #overview_increase {color: var(--increase-text);}
 #overview_decrease {color: var(--decrease-text);}
 
+@media( max-width: 375px ) {
+    
+    .website_title { font-size: 24px; }
+    .total_counter { font-size: 14px; }
+    
+    .header_left { margin-bottom: 10px; }
+    .header_right { 
+        
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        justify-content: space-between; 
+        border-top: 1px solid var(--header-hr);
+
+    }
+    
+    body {
+
+        padding-bottom: 20px;
+
+    } 
+   
+   .layout_wrapper {
+
+        width: 90%;
+
+    }
+
+    .followers_wrapper {
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+        
+        grid-row-gap: 25px;
+
+    } 
+    
+    .overview_wrapper {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+
+    }
+    
+    .website_header {
+
+        grid-template-areas: 'title'
+                             'toggle';
+                             
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+
+    }
+
+}
+
 .attribution {
     
+    color: gray;
+
     position: fixed;
-    
     bottom: 0;
 
 }
